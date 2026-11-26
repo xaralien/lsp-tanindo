@@ -1,3 +1,9 @@
+# Mode aplikasi CodeIgniter: production menyembunyikan pesan error PHP dari pengunjung.
+# Untuk debugging sementara, ganti "production" menjadi "development".
+<IfModule mod_env.c>
+    SetEnv CI_ENV production
+</IfModule>
+
 RewriteOptions inherit
 RewriteEngine on
 

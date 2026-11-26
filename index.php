@@ -53,7 +53,14 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+	if (isset($_SERVER['CI_ENV'])) {
+		define('ENVIRONMENT', $_SERVER['CI_ENV']);
+	} elseif (isset($_SERVER['REDIRECT_CI_ENV'])) {
+		// Apache menambahkan awalan REDIRECT_ setelah rewrite ke index.php
+		define('ENVIRONMENT', $_SERVER['REDIRECT_CI_ENV']);
+	} else {
+		define('ENVIRONMENT', 'development');
+	}
 
 /*
  *---------------------------------------------------------------

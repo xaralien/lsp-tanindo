@@ -1,40 +1,51 @@
-<div class="container-fluid page-body-wrapper full-page-wrapper">
-  <div class="content-wrapper d-flex align-items-center auth bg-success-subtle">
-    <div class="row w-100 mx-0">
-      <div class="col-lg-4 mx-auto">
-        <div class="auth-form-light text-start py-5 px-4 px-sm-5">
-          <img src="<?= base_url('assets/') ?>images\auth\lsp_tanindo_baru.jpg" alt="logo" width="100%">
-          <!-- popup untuk berhasil register -->
-          <?php if ($this->session->flashdata('message')): ?>
-            <p><?php echo $this->session->flashdata('message'); ?></p>
-          <?php endif; ?>
+<div class="tn-auth-shell">
+  <?php $this->load->view('statis_template/auth_aside', [
+    'aside_title' => 'Selamat datang kembali',
+    'aside_text'  => 'Masuk untuk memantau status pendaftaran, mengisi formulir asesmen, dan mengunduh dokumen sertifikasi Anda.',
+  ]); ?>
 
-          <!-- popup untuk gagal login -->
-          <?php if ($this->session->flashdata('error')): ?>
-            <p style="color:red;"><?php echo $this->session->flashdata('error'); ?></p>
-          <?php endif; ?>
-          <small class="text-muted">
-            <h3 align='center'>Login</h3>
-          </small>
-          <form class="form-control pt-3" method="POST" action="<?= base_url('auth/login'); ?>">
-            <div class="form-group">
-              <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Username / Email" required>
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Password" required>
-            </div>
-            <div class="mt-3 d-grid gap-2">
-              <button type="submit" class="btn btn-inverse-success btn-fw">Login</button>
-            </div>
-          </form>
-          <div class="text-center mt-4 fw-light">
-            Tidak Punya Akun? <a href="<?= base_url('auth/register_tanindo') ?>" class="text-primary">Buat</a> <br>
-            Lupa Password ! <a href="<?= base_url('auth/forgotpassword') ?>" class="text-primary">Lupa password?</a>
+  <main class="tn-auth-main">
+    <div class="tn-auth-card">
+      <?php $this->load->view('statis_template/auth_mobile_brand'); ?>
+      <a class="tn-back" href="<?= base_url('home') ?>"><i class="bi bi-arrow-left"></i> Kembali ke beranda</a>
+      <h1>Masuk ke akun Anda</h1>
+      <p class="tn-sub">Gunakan email dan password yang terdaftar.</p>
+
+      <div class="tn-flash">
+        <?php if ($this->session->flashdata('message')) : ?>
+          <?= $this->session->flashdata('message'); ?>
+        <?php endif; ?>
+        <?php if ($this->session->flashdata('error')) : ?>
+          <div class="tn-alert tn-alert-danger"><i class="bi bi-exclamation-circle-fill"></i><div><?= $this->session->flashdata('error'); ?></div></div>
+        <?php endif; ?>
+      </div>
+
+      <form method="POST" action="<?= base_url('auth/login'); ?>" data-loading>
+        <div class="tn-field">
+          <label class="tn-label" for="email">Email</label>
+          <div class="tn-control">
+            <i class="bi bi-envelope"></i>
+            <input type="email" class="tn-input" id="email" name="email" placeholder="nama@email.com" autocomplete="email" inputmode="email" required autofocus>
           </div>
         </div>
-      </div>
+        <div class="tn-field">
+          <label class="tn-label" for="password">Password</label>
+          <div class="tn-control has-toggle">
+            <i class="bi bi-lock"></i>
+            <input type="password" class="tn-input" id="password" name="password" placeholder="Masukkan password" autocomplete="current-password" required>
+            <button type="button" class="tn-toggle-pass" data-toggle-pass="password" aria-label="Tampilkan password"><i class="bi bi-eye"></i></button>
+          </div>
+        </div>
+        <div class="tn-auth-links">
+          <span></span>
+          <a href="<?= base_url('auth/forgotpassword') ?>">Lupa password?</a>
+        </div>
+        <button type="submit" class="tn-btn tn-btn-primary tn-btn-lg tn-btn-block" data-loading-text="Masuk…">
+          Masuk <i class="bi bi-arrow-right"></i>
+        </button>
+      </form>
+
+      <p class="tn-auth-alt">Belum punya akun? <a href="<?= base_url('auth/register_tanindo') ?>">Daftar sertifikasi</a></p>
     </div>
-  </div>
-  <!-- content-wrapper ends -->
+  </main>
 </div>
-<!-- page-body-wrapper ends -->

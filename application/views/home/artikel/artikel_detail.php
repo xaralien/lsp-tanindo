@@ -2,39 +2,7 @@
 <!--    Main Content-->
 <!-- ===============================================-->
 <main class="main" id="top">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 bg-light opacity-85 justify-content-between" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container">
-            <a class="navbar-brand" href="<?= base_url() ?>"><img class="d-inline-block align-top img-fluid" src="<?= base_url('template/tanindo/') ?>assets/img/gallery/logo-icon-tanindo.png" alt="" width="50" /><span class="text-theme font-monospace fs-4 ps-2">Tanindo</span></a>
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0 text-end" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-end">
-                    <li class="nav-item px-2">
-                        <a class="nav-link fw-medium active" aria-current="page" href="#header">Beranda</a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link fw-medium" href="<?= base_url('home/skema') ?>">Skema</a><!-- ganti link ke menu skema -->
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link fw-medium" href="<?= base_url('home/artikel') ?>">Artikel</a><!-- ganti link ke menu skema -->
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link fw-medium" href="#tentang">Tentang</a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link fw-medium" href="#alur">Alur</a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link fw-medium" href="#kontak">Kontak </a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link fw-medium btn btn-outline-secondary" target="_blank" type="button" href="<?= base_url('auth/register_tanindo') ?>">Registration</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php $this->load->view('statis_template/v_navbar'); ?>
 
     <section class="py-0" id="header">
         <div class="bg-holder d-none d-md-block" style="

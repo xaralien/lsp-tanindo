@@ -1,122 +1,103 @@
-<!-- Floating Action Button -->
-<button id="chatToggle" class="chat-btn">
-  💬
-</button>
+<?php
+// ==== Informasi kontak LSP Tanindo (ubah di sini saja) ====
+$kontak = [
+  'telp'       => '0819-9000-0360',
+  'telp_href'  => 'tel:+6281990000360',
+  'wa_href'    => 'https://wa.me/6281990000360',
+  'email'      => 'awakbaharikqpql@gmail.com',
+  'alamat_1'   => 'Jl. Tebet Barat Dalam Raya No. 15',
+  'alamat_2'   => 'Jakarta Selatan 12810, Indonesia',
+  'maps_query' => 'Jl. Tebet Barat Dalam Raya No. 15, Jakarta Selatan 12810',
+];
+$tpl = base_url('template/tanindo/') . 'assets/img/';
+?>
 
-<!-- Chat Window -->
-<div id="chatWindow" class="chat-box">
-  <div class="chat-header">
-    <span>Live Chat</span>
-    <button id="closeChat" class="btn-close"></button>
-  </div>
-  <div class="chat-body">
-    <p>👋 Hello! How can I help you?</p>
-    <div id="chatMessages"></div>
-  </div>
-  <div class="chat-footer">
-    <input type="text" id="chatInput" class="form-control" placeholder="Type a message...">
-    <button id="sendChat" class="btn btn-primary" style="background-color: #28a745; border-color: #28a745;">Send</button>
-  </div>
-</div>
-
-
-<section class="py-5" id="kontak">
-  <div class="bg-holder" style=" background-image: url(<?= base_url('template/tanindo/') ?>assets/img/illustrations/footer-bg.png);background-position: center;background-size: cover;"></div>
-  <!--/.bg-holder-->
-
-  <div class="container">
-    <div class="row justify-content-lg-between min-vh-50">
-      <div class="col-12">
-        <div class="card bg-success">
-          <div class="card-body p-sm-4">
-            <div class="row">
-              <div class="col-md-5 col-12">
-                <h6 class="mb-3 text-1000 fw-semi-bold">
-                  Find We On Your Maps!
-                </h6>
-                <div class="google-map">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.8451983096047!2d106.6410738!3d-6.1514809999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f9001e5c0f79%3A0xe06ccf56cfa8b188!2sLEMBAGA%20SERTIFIKASI%20PROFESI%20TANI%20NELAYAN%20INDONESIA!5e0!3m2!1sid!2sid!4v1720581468562!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-              </div>
-              <div class="col-md-4 col-12">
-                <h6 class="mb-3 text-1000 fw-semi-bold">
-                  Alamat Kami
-                </h6>
-                <p class="mb-0 text-white">
-                  <span class="text-white fs--1 fs-sm-1">Sekretariat Vivo Business Park A31 Unit
-                    I,<br />
-                    Jl. Pembangunan 3 Karang Anyar,
-                    Neglasari, <br />
-                    Kota Tangerang, Banten 15121,
-                    <br />
-                    Telp. 021-5958 5665, 0817 6322 965
-                    <br />
-                  </span>
-                </p>
-              </div>
-              <div class="col-md-3 col-12">
-                <h6 class="mb-3 text-1000 fw-semi-bold">
-                  Hubungi kami
-                </h6>
-                <ul class="list-unstyled mb-md-4 mb-lg-0 text-white">
-                  <li class="mb-3">
-                    <a href="https://www.facebook.com/people/Lsp-Tanindo/pfbid02W8kwmYVzTURSvvDKcx9w5nFfmAGScgDGmbPCAy9jm8foV2DTSAZJw3spCCmjNR9pl/?mibextid=ZbWKwL" target="_blank"><i class="bi bi-facebook"></i>&nbsp;Lsp Tanindo</a>
-                  </li>
-                  <li class="mb-3">
-                    <a href="https://www.instagram.com/lsp_tanindo/?igsh=MWxia3lwamphc3A3Ng%3D%3D" target="_blank"><i class="bi bi-instagram"></i>&nbsp;@lsp_tanindo</a>
-
-                  </li>
-                  <li class="mb-3">
-                    <a href="https://www.tiktok.com/@lsp.tanindo?_t=8nW0gaTpVce&_r=1" target="_blank"><i class="bi bi-tiktok"></i>&nbsp;@lsp.tanindo</a>
-
-                  </li>
-                  <li class="mb-3">
-                    <a href="https://www.youtube.com/@lsptanindo" target="_blank"><i class="bi bi-youtube"></i>&nbsp;LSP Tanindo</a>
-                  </li>
-                  <li class="mb-3">
-                    <a href="https://x.com/LspTanindo?t=IOgV_eo43JORkSGwH9cQKQ&s=09" target="_blank"><i class="bi bi-twitter-x"></i>&nbsp;@LspTanindo</a>
-
-                  </li>
-                  <li class="mb-3">
-                    <a href="tel:02159585665" target="_blank"><i class="bi bi-phone"></i>&nbsp;Telp : 021-5958 5665</a>
-
-                  </li>
-                  <li class="mb-3">
-                    <a href="https://wa.me/+628176322965" target="_blank"><i class="bi bi-whatsapp"></i>&nbsp;Whatsap : 0817 6322 965</a>
-
-                  </li>
-                  <li class="mb-3">
-                    <a href="mailto:admin@lsptanindo.com " target="_blank"><i class="bi bi-envelope"></i>&nbsp;admin@lsptanindo.com</a>
-
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+<!-- ============ FOOTER / KONTAK ============ -->
+<footer class="tn-footer" id="kontak">
+  <div class="tn-container">
+    <div class="tn-footer-grid">
+      <div>
+        <div class="tn-footer-brand">
+          <img src="<?= $tpl ?>gallery/logo-icon-tanindo.png" alt="Logo LSP Tanindo" />
+          <div><strong>LSP Tanindo</strong><small>Tani Andalan Indonesia</small></div>
+        </div>
+        <p style="margin:0;line-height:1.7;max-width:340px">
+          Lembaga Sertifikasi Profesi bidang pertanian berlisensi BNSP. Mengukuhkan kompetensi, meningkatkan daya saing.
+        </p>
+        <div class="tn-socials" aria-label="Media sosial">
+          <a href="https://www.facebook.com/people/Lsp-Tanindo/pfbid02W8kwmYVzTURSvvDKcx9w5nFfmAGScgDGmbPCAy9jm8foV2DTSAZJw3spCCmjNR9pl/?mibextid=ZbWKwL" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/lsp_tanindo/?igsh=MWxia3lwamphc3A3Ng%3D%3D" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.tiktok.com/@lsp.tanindo?_t=8nW0gaTpVce&_r=1" target="_blank" rel="noopener" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          <a href="https://www.youtube.com/@lsptanindo" target="_blank" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="https://x.com/LspTanindo?t=IOgV_eo43JORkSGwH9cQKQ&s=09" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
         </div>
       </div>
+
+      <div>
+        <h4>Hubungi Kami</h4>
+        <ul class="tn-contact-list">
+          <li>
+            <i class="bi bi-telephone-fill"></i>
+            <div><span>Telepon / WhatsApp</span><a href="<?= $kontak['telp_href'] ?>"><?= $kontak['telp'] ?></a></div>
+          </li>
+          <li>
+            <i class="bi bi-envelope-fill"></i>
+            <div><span>Email</span><a href="mailto:<?= $kontak['email'] ?>"><?= $kontak['email'] ?></a></div>
+          </li>
+          <li>
+            <i class="bi bi-geo-alt-fill"></i>
+            <div><span>Alamat</span><address><?= $kontak['alamat_1'] ?><br /><?= $kontak['alamat_2'] ?></address></div>
+          </li>
+        </ul>
+        <a href="<?= $kontak['wa_href'] ?>" target="_blank" rel="noopener" class="tn-btn tn-btn-accent tn-btn-sm" style="margin-top:1.5rem">
+          <i class="bi bi-whatsapp"></i> Chat via WhatsApp
+        </a>
+      </div>
+
+      <div class="tn-footer-map">
+        <iframe
+          title="Lokasi LSP Tanindo di Google Maps"
+          src="https://maps.google.com/maps?q=<?= rawurlencode($kontak['maps_query']) ?>&z=16&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
     </div>
-    <hr class="text-300 mb-0" />
-    <div class="row flex-center py-5">
-      <div class="col-12 col-sm-8 col-md-6 text-center text-md-start">
-        <a class="text-decoration-none" href="#"><img class="d-inline-block align-top img-fluid" src="<?= base_url('template/tanindo/') ?>assets/img/gallery/logo-icon-tanindo.png" alt="" width="40" /><span class="text-theme font-monospace fs-3 ps-2">Tanindo</span></a>
-      </div>
-      <div class="col-12 col-sm-8 col-md-6">
-        <p class="fs--1 text-dark my-2 text-center text-md-end">
-          &copy; 2024 LSP Tanindo
-          <br />
-          This template is made with Love by
-          <a class="text-dark" href="https://themewagon.com/" target="_blank">ThemeWagon
-          </a>
-        </p>
-      </div>
+
+    <div class="tn-footer-bottom">
+      <span>&copy; <?= date('Y') ?> LSP Tanindo. Hak cipta dilindungi.</span>
+      <span>Template oleh <a href="https://themewagon.com/" target="_blank" rel="noopener">ThemeWagon</a></span>
     </div>
   </div>
-</section>
+</footer>
 </main>
-<!-- ===============================================-->
-<!--    End of Main Content-->
-<!-- ===============================================-->
+
+<!-- ============ Tombol mengambang ============ -->
+<div class="tn-fab-stack">
+  <a href="#top" class="tn-fab tn-totop" id="tnToTop" aria-label="Kembali ke atas"><i class="bi bi-arrow-up"></i></a>
+  <a href="<?= $kontak['wa_href'] ?>" target="_blank" rel="noopener" class="tn-fab tn-fab-wa" aria-label="WhatsApp LSP Tanindo"><i class="bi bi-whatsapp"></i></a>
+  <button type="button" class="tn-fab tn-fab-chat" id="chatToggle" aria-label="Buka live chat" aria-controls="chatWindow" aria-expanded="false">
+    <i class="bi bi-chat-dots-fill"></i><span class="tn-dot"></span>
+  </button>
+</div>
+
+<div class="tn-chat" id="chatWindow" role="dialog" aria-label="Live chat">
+  <div class="tn-chat-head">
+    <img src="<?= $tpl ?>gallery/logo-icon-tanindo.png" alt="" />
+    <div><strong>Admin LSP Tanindo</strong><small>Biasanya membalas di jam kerja</small></div>
+    <button type="button" id="closeChat" aria-label="Tutup chat"><i class="bi bi-x-lg"></i></button>
+  </div>
+  <div class="tn-chat-body" id="chatMessages">
+    <div class="tn-bubble is-admin">👋 Halo! Ada yang bisa kami bantu?</div>
+  </div>
+  <form class="tn-chat-foot" id="chatForm" autocomplete="off">
+    <input type="text" id="chatInput" placeholder="Tulis pesan…" maxlength="1000" aria-label="Pesan" />
+    <button type="submit" id="sendChat" aria-label="Kirim"><i class="bi bi-send-fill"></i></button>
+  </form>
+</div>
+
+<div class="tn-lightbox" id="tnLightbox" role="dialog" aria-label="Pratinjau gambar">
+  <button type="button" aria-label="Tutup"><i class="bi bi-x-lg"></i></button>
+  <img src="" alt="" />
+</div>
 
 <!-- ===============================================-->
 <!--    JavaScripts-->
@@ -124,7 +105,6 @@
 <script src="<?= base_url('template/tanindo/') ?>vendors/@popperjs/popper.min.js"></script>
 <script src="<?= base_url('template/tanindo/') ?>vendors/bootstrap/bootstrap.min.js"></script>
 <script src="<?= base_url('template/tanindo/') ?>vendors/is/is.min.js"></script>
-<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script> -->
 <script src="<?= base_url('template/tanindo/') ?>assets/js/theme.js"></script>
 <script>
   function downloadFile() {
@@ -135,106 +115,157 @@
     link.click();
     document.body.removeChild(link);
   }
-  let lastMessageCount = 0;
-  let newMessageAlert = new Audio("<?= base_url('assets/sounds/notification.mp3') ?>"); // Ensure this file exists
 
-  document.getElementById("chatToggle").addEventListener("click", function() {
-    document.getElementById("chatWindow").style.display = "flex";
-    document.getElementById("chatToggle").classList.remove("new-message"); // Remove 🔴 alert
-    document.title = "Live Chat"; // Reset title
-    loadMessages();
-  });
+  (function() {
+    // ---------- Navbar ----------
+    var nav = document.getElementById("tnNav");
+    var burger = document.getElementById("tnBurger");
+    var toTop = document.getElementById("tnToTop");
 
-  document.getElementById("closeChat").addEventListener("click", function() {
-    document.getElementById("chatWindow").style.display = "none";
-  });
-
-  document.getElementById("sendChat").addEventListener("click", function() {
-    sendMessage();
-  });
-
-  document.getElementById("chatInput").addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-      sendMessage();
+    function onScroll() {
+      var y = window.scrollY || window.pageYOffset;
+      if (nav) nav.classList.toggle("is-scrolled", y > 8);
+      if (toTop) toTop.classList.toggle("is-visible", y > 600);
     }
-  });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
 
-  function sendMessage() {
-    let input = document.getElementById("chatInput");
-    let message = input.value.trim();
-
-    if (message === "") return;
-
-    let chatMessages = document.getElementById("chatMessages");
-    let newMessage = document.createElement("div");
-    newMessage.classList.add("chat-bubble", "guest-message");
-    newMessage.innerHTML = `<strong>You:</strong> ${message}`;
-    chatMessages.appendChild(newMessage);
-
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "<?= base_url('chat/send_message') ?>", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-    let formData = `message=${encodeURIComponent(message)}&sender_type=guest`;
-    xhr.send(formData);
-
-    input.value = "";
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
-
-
-
-
-  function loadMessages() {
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", "<?= base_url('chat/get_messages') ?>", true);
-    xhr.onload = function() {
-      if (xhr.status == 200) {
-        let messages = JSON.parse(xhr.responseText);
-        let chatMessages = document.getElementById("chatMessages");
-        chatMessages.innerHTML = "";
-
-        messages.forEach(function(msg) {
-          let messageDiv = document.createElement("div");
-          messageDiv.classList.add("chat-bubble");
-
-          if (msg.sender === "admin") {
-            messageDiv.classList.add("admin-message");
-            messageDiv.innerHTML = `<strong>Admin:</strong> ${msg.message}`;
-          } else {
-            messageDiv.classList.add("guest-message");
-            messageDiv.innerHTML = `<strong>You:</strong> ${msg.message}`;
-          }
-
-          chatMessages.appendChild(messageDiv);
+    if (nav && burger) {
+      burger.addEventListener("click", function() {
+        var open = nav.classList.toggle("is-open");
+        burger.setAttribute("aria-expanded", open ? "true" : "false");
+        burger.setAttribute("aria-label", open ? "Tutup menu" : "Buka menu");
+      });
+      nav.querySelectorAll(".tn-nav-panel a").forEach(function(a) {
+        a.addEventListener("click", function() {
+          nav.classList.remove("is-open");
+          burger.setAttribute("aria-expanded", "false");
         });
+      });
+    }
 
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+    // ---------- Reveal on scroll ----------
+    var items = document.querySelectorAll(".tn-reveal");
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(en) {
+          if (en.isIntersecting) { en.target.classList.add("is-visible"); io.unobserve(en.target); }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+      items.forEach(function(el) { io.observe(el); });
+    } else {
+      items.forEach(function(el) { el.classList.add("is-visible"); });
+    }
+
+    // ---------- "Baca selengkapnya" ----------
+    var aboutBtn = document.getElementById("aboutToggle");
+    var aboutText = document.getElementById("aboutText");
+    if (aboutBtn && aboutText) {
+      aboutBtn.addEventListener("click", function() {
+        var clamped = aboutText.classList.toggle("is-clamped");
+        aboutBtn.setAttribute("aria-expanded", clamped ? "false" : "true");
+        aboutBtn.innerHTML = clamped ? 'Baca selengkapnya <i class="bi bi-chevron-down"></i>' : 'Tutup <i class="bi bi-chevron-up"></i>';
+      });
+    }
+
+    // ---------- Lightbox ----------
+    var lb = document.getElementById("tnLightbox");
+    if (lb) {
+      var lbImg = lb.querySelector("img");
+      document.querySelectorAll("img[data-zoom], .tn-gallery a").forEach(function(el) {
+        el.addEventListener("click", function(ev) {
+          ev.preventDefault();
+          lbImg.src = el.tagName === "A" ? el.getAttribute("href") : el.src;
+          lbImg.alt = el.alt || "";
+          lb.classList.add("is-open");
+        });
+      });
+      lb.addEventListener("click", function() { lb.classList.remove("is-open"); lbImg.src = ""; });
+      document.addEventListener("keydown", function(e) { if (e.key === "Escape") lb.classList.remove("is-open"); });
+    }
+
+    // ---------- Live chat ----------
+    var chatToggle = document.getElementById("chatToggle");
+    var chatWindow = document.getElementById("chatWindow");
+    var chatMessages = document.getElementById("chatMessages");
+    var chatInput = document.getElementById("chatInput");
+    var chatForm = document.getElementById("chatForm");
+    var pollTimer = null;
+    var lastCount = -1;
+
+    function bubble(text, isAdmin) {
+      var div = document.createElement("div");
+      div.className = "tn-bubble " + (isAdmin ? "is-admin" : "is-guest");
+      div.textContent = text; // aman dari XSS
+      return div;
+    }
+
+    function setOpen(open) {
+      chatWindow.classList.toggle("is-open", open);
+      chatToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) {
+        chatToggle.classList.remove("has-new");
+        loadMessages();
+        setTimeout(function() { chatInput.focus(); }, 50);
       }
-    };
-    xhr.send();
-  }
+    }
 
+    function loadMessages() {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "<?= base_url('chat/get_messages') ?>", true);
+      xhr.onload = function() {
+        if (xhr.status !== 200) return;
+        var messages;
+        try { messages = JSON.parse(xhr.responseText); } catch (e) { return; }
+        if (!Array.isArray(messages)) return;
 
+        if (lastCount >= 0 && messages.length > lastCount && !chatWindow.classList.contains("is-open")) {
+          var last = messages[messages.length - 1];
+          if (last && last.sender === "admin") chatToggle.classList.add("has-new");
+        }
+        if (messages.length === lastCount) return;
+        lastCount = messages.length;
 
-  // Auto refresh chat every 3 seconds
-  setInterval(loadMessages, 3000);
+        chatMessages.innerHTML = "";
+        chatMessages.appendChild(bubble("👋 Halo! Ada yang bisa kami bantu?", true));
+        messages.forEach(function(msg) {
+          chatMessages.appendChild(bubble(msg.message, msg.sender === "admin"));
+        });
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      };
+      xhr.send();
+    }
 
-  // Flash Title Notification
-  function flashTitle() {
-    let isFlashing = true;
-    let originalTitle = "Live Chat";
-    let newTitle = "🔴 New Message!";
-    let interval = setInterval(() => {
-      document.title = isFlashing ? newTitle : originalTitle;
-      isFlashing = !isFlashing;
-    }, 1000);
+    function sendMessage() {
+      var message = chatInput.value.trim();
+      if (message === "") return;
+      chatMessages.appendChild(bubble(message, false));
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      lastCount++;
 
-    setTimeout(() => {
-      clearInterval(interval);
-      document.title = originalTitle;
-    }, 5000); // Stop flashing after 5 seconds
-  }
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "<?= base_url('chat/send_message') ?>", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.send("message=" + encodeURIComponent(message) + "&sender_type=guest");
+      chatInput.value = "";
+    }
+
+    if (chatToggle && chatWindow) {
+      chatToggle.addEventListener("click", function() { setOpen(!chatWindow.classList.contains("is-open")); });
+      document.getElementById("closeChat").addEventListener("click", function() { setOpen(false); });
+      chatForm.addEventListener("submit", function(e) { e.preventDefault(); sendMessage(); });
+
+      // Polling: cepat saat chat terbuka, lambat saat tertutup, berhenti saat tab tidak aktif.
+      function schedule() {
+        clearTimeout(pollTimer);
+        if (document.hidden) return;
+        pollTimer = setTimeout(function() { loadMessages(); schedule(); }, chatWindow.classList.contains("is-open") ? 3000 : 15000);
+      }
+      document.addEventListener("visibilitychange", schedule);
+      loadMessages();
+      schedule();
+    }
+  })();
 </script>
 </body>
 
